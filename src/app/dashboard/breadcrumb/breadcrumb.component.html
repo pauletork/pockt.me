@@ -1,0 +1,33 @@
+<div class="bg-primary pb-2 pt-2">
+  <div class="container space-bottom-1 space-bottom-lg-0">
+    <div class="d-lg-flex justify-content-lg-end align-items-lg-center">
+      <div *ngIf="activeRoute === '/dashboard'"  class="ml-lg-auto">
+        <a class="btn btn-sm btn-soft-white text-nowrap transition-3d-hover" href="#requestPaymentModal"
+          data-modal-target="#requestPaymentModal">
+          <span class="fas fa-plus small mr-2"></span>
+          Request a Payment
+        </a>
+      </div>
+
+      <div *ngIf="activeRoute === '/activity'"  class="ml-lg-auto">
+        <a class="btn btn-sm btn-soft-white text-nowrap transition-3d-hover" href="javascript:;">
+          <span class="fas fa-plus small mr-2"></span>
+          Create a New Transaction
+        </a>
+      </div>
+
+      <div *ngIf="activeRoute === '/edit-profile'"  class="ml-lg-auto">
+        <a class="btn btn-sm btn-soft-white text-nowrap transition-3d-hover" href="profile.html">View My Profile</a>
+      </div>
+
+      <div *ngIf="activeRoute === '/links'"  class="ml-lg-auto">
+        <a class="btn btn-sm btn-soft-white text-nowrap transition-3d-hover" href="#addTaskModal"
+          data-modal-target="#addTaskModal">
+          <span class="fas fa-plus small mr-2"></span>
+          Add Task
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,643 @@
+<app-topbar></app-topbar>
+  <main id="content" role="main">
+    <app-breadcrumb></app-breadcrumb>
+    <!-- Content Section -->
+    <div class="bg-light">
+      <div class="container space-2">
+        <div class="card">
+          <div class="card-body p-4">
+            <!-- Nav -->
+            <div class="row justify-content-between align-items-center mb-4">
+              <div class="col-md-5 order-md-2 text-md-right mb-3 mb-md-0">
+                <!-- Select -->
+                <select class="js-select selectpicker dropdown-select mr-2" data-width="fit" data-style="btn-soft-primary btn-sm">
+                  <option value="taskSelect1" title="View" selected>Completed tasks</option>
+                  <option value="taskSelect2">Incomplete tasks</option>
+                  <option value="taskSelect3">All tasks</option>
+                </select>
+                <!-- End Select -->
+
+                <!-- Select -->
+                <select class="js-select selectpicker dropdown-select" data-width="fit" data-style="btn-soft-primary btn-sm">
+                  <option value="sortSelect1" title="Sort" selected>None</option>
+                  <option value="sortSelect2">Project</option>
+                  <option value="sortSelect3">Due date</option>
+                  <option value="sortSelect4">Likes</option>
+                </select>
+                <!-- End Select -->
+              </div>
+
+              <div class="col-md-7 order-md-1">
+                <!-- Nav Classic -->
+                <ul class="nav nav-classic nav-borderless px-0" id="pills-tab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="pills-one-tab" data-toggle="pill" href="#pills-one" role="tab" aria-controls="pills-one" aria-selected="true">Assigned</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="pills-two-tab" data-toggle="pill" href="#pills-two" role="tab" aria-controls="pills-two" aria-selected="false">Calendar</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="pills-three-tab" data-toggle="pill" href="#pills-three" role="tab" aria-controls="pills-three" aria-selected="false">Progress</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="pills-four-tab" data-toggle="pill" href="#pills-four" role="tab" aria-controls="pills-four" aria-selected="false">Files</a>
+                  </li>
+                </ul>
+                <!-- End Nav Classic -->
+              </div>
+            </div>
+            <!-- End Nav -->
+
+            <!-- Datatable -->
+            <div class="tab-content" id="pills-tabContent">
+              <!-- Content One -->
+              <div class="tab-pane fade show active" id="pills-one" role="tabpanel" aria-labelledby="pills-one-tab">
+                <!-- Transaction Table -->
+                <div class="table-responsive-md u-datatable">
+                  <table class="js-datatable table table-borderless u-datatable__striped u-datatable__content"
+                         data-dt-info="#datatableInfo"
+                         data-dt-search="#datatableSearch"
+                         data-dt-entries="#datatableEntries"
+                         data-dt-page-length="12"
+                         data-dt-is-responsive="false"
+                         data-dt-is-show-paging="true"
+
+                         data-dt-pagination="datatablePagination"
+                         data-dt-pagination-classes="pagination mb-0"
+                         data-dt-pagination-items-classes="page-item"
+                         data-dt-pagination-links-classes="page-link"
+
+                         data-dt-pagination-next-classes="page-item"
+                         data-dt-pagination-next-link-classes="page-link"
+                         data-dt-pagination-next-link-markup='<span aria-hidden="true">&raquo;</span>'
+
+                         data-dt-pagination-prev-classes="page-item"
+                         data-dt-pagination-prev-link-classes="page-link"
+                         data-dt-pagination-prev-link-markup='<span aria-hidden="true">&laquo;</span>'>
+                    <thead>
+                      <tr class="text-uppercase font-size-1">
+                        <th scope="col" class="font-weight-medium">
+                          <div class="d-flex justify-content-between align-items-center">
+                            Task
+                            <div class="ml-2">
+                              <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                              <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                            </div>
+                          </div>
+                        </th>
+                        <th scope="col" class="font-weight-medium">
+                          <div class="d-flex justify-content-between align-items-center">
+                            Project
+                            <div class="ml-2">
+                              <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                              <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                            </div>
+                          </div>
+                        </th>
+                        <th scope="col" class="font-weight-medium">
+                          <div class="d-flex justify-content-between align-items-center">
+                            Priority
+                            <div class="ml-2">
+                              <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                              <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                            </div>
+                          </div>
+                        </th>
+                        <th scope="col" class="font-weight-medium">
+                          <div class="d-flex justify-content-between align-items-center">
+                            Due date
+                            <div class="ml-2">
+                              <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                              <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                            </div>
+                          </div>
+                        </th>
+                        <th scope="col" class="font-weight-medium">
+                          <div class="d-flex justify-content-between align-items-center">
+                            Status
+                            <div class="ml-2">
+                              <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                              <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                            </div>
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody class="font-size-1">
+                      <tr>
+                        <td class="align-middle font-weight-normal">Home page redesign</td>
+                        <td class="align-middle">Spotify</td>
+                        <td class="align-middle text-danger">
+                          <span class="fas fa-arrow-up mr-1"></span>
+                          Highest
+                        </td>
+                        <td class="align-middle">25 Jul</td>
+                        <td class="align-middle">
+                          <span class="fas fa-circle text-primary small mr-1"></span>
+                          In progress
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="align-middle font-weight-normal">Logo branding</td>
+                        <td class="align-middle">Dropbox</td>
+                        <td class="align-middle text-warning">
+                          <span class="fas fa-arrow-up mr-1"></span>
+                          Medium
+                        </td>
+                        <td class="align-middle">12 Aug</td>
+                        <td class="align-middle">
+                          <span class="fas fa-circle text-primary small mr-1"></span>
+                          In progress
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="align-middle font-weight-normal">Website redesign</td>
+                        <td class="align-middle">Google</td>
+                        <td class="align-middle text-danger">
+                          <span class="fas fa-arrow-up mr-1"></span>
+                          High
+                        </td>
+                        <td class="align-middle">15 Aug</td>
+                        <td class="align-middle">
+                          <span class="fas fa-circle text-success small mr-1"></span>
+                          Completed
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="align-middle font-weight-normal">Home page redesign</td>
+                        <td class="align-middle">FrontApp</td>
+                        <td class="align-middle text-warning">
+                          <span class="fas fa-arrow-up mr-1"></span>
+                          Medium
+                        </td>
+                        <td class="align-middle">01 Aug</td>
+                        <td class="align-middle">
+                          <span class="fas fa-circle text-success small mr-1"></span>
+                          Completed
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="align-middle font-weight-normal">SEO optimization</td>
+                        <td class="align-middle">Slack</td>
+                        <td class="align-middle text-success">
+                          <span class="fas fa-arrow-down mr-1"></span>
+                          Lowest
+                        </td>
+                        <td class="align-middle">02 Aug</td>
+                        <td class="align-middle">
+                          <span class="fas fa-circle text-warning small mr-1"></span>
+                          On hold
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="align-middle font-weight-normal">Branding</td>
+                        <td class="align-middle">Spotify</td>
+                        <td class="align-middle text-danger">
+                          <span class="fas fa-arrow-up mr-1"></span>
+                          High
+                        </td>
+                        <td class="align-middle">05 Sep</td>
+                        <td class="align-middle">
+                          <span class="fas fa-circle text-primary small mr-1"></span>
+                          In progress
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="align-middle font-weight-normal">Logo redesign</td>
+                        <td class="align-middle">Htmlstream</td>
+                        <td class="align-middle text-danger">
+                          <span class="fas fa-arrow-up mr-1"></span>
+                          High
+                        </td>
+                        <td class="align-middle">15 Sep</td>
+                        <td class="align-middle">
+                          <span class="fas fa-circle text-success small mr-1"></span>
+                          Completed
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="align-middle font-weight-normal">Website redesign</td>
+                        <td class="align-middle">GitHub</td>
+                        <td class="align-middle text-success">
+                          <span class="fas fa-arrow-down mr-1"></span>
+                          Low
+                        </td>
+                        <td class="align-middle">16 Sep</td>
+                        <td class="align-middle">
+                          <span class="fas fa-circle text-warning small mr-1"></span>
+                          On hold
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- End Transaction Table -->
+              </div>
+              <!-- End Content One -->
+
+              <!-- Content Two -->
+              <div class="tab-pane fade" id="pills-two" role="tabpanel" aria-labelledby="pills-two-tab">
+                <div class="text-center py-4">
+                  <div class="w-md-80 w-lg-50 text-center mx-md-auto">
+                    <figure id="SVGevents" class="svg-preloader mb-7 ie-events">
+                      <img class="js-svg-injector w-50" src="../../assets/svg/illustrations/events.svg" alt="Image Description"
+                           data-parent="#SVGevents">
+                    </figure>
+                    <h4 class="h5 font-weight-normal">All due dates to tasks &amp; other notes in this project will appear here.</h4>
+                  </div>
+                </div>
+              </div>
+              <!-- End Content Two -->
+
+              <!-- Content Three -->
+              <div class="tab-pane fade" id="pills-three" role="tabpanel" aria-labelledby="pills-three-tab">
+                <div class="text-center py-4">
+                  <div class="w-md-80 w-lg-50 text-center mx-md-auto">
+                    <figure id="SVGdataReport" class="svg-preloader mb-7 ie-data-report">
+                      <img class="js-svg-injector w-50" src="../../assets/svg/illustrations/data-report.svg" alt="Image Description"
+                           data-parent="#SVGdataReport">
+                    </figure>
+                    <h4 class="h5 font-weight-normal">All progress, data analysis to tasks in this project will appear here.</h4>
+                  </div>
+                </div>
+              </div>
+              <!-- End Content Three -->
+
+              <!-- Content Four -->
+              <div class="tab-pane fade" id="pills-four" role="tabpanel" aria-labelledby="pills-four-tab">
+                <div class="text-center py-4">
+                  <div class="w-md-80 w-lg-50 text-center mx-md-auto">
+                    <figure id="SVGimageUpload" class="svg-preloader mb-7 ie-image-upload">
+                      <img class="js-svg-injector w-50" src="../../assets/svg/illustrations/image-upload.svg" alt="Image Description"
+                           data-parent="#SVGimageUpload">
+                    </figure>
+                    <h4 class="h5 font-weight-normal">All attachments to tasks &amp; conversations in this project will appear here.</h4>
+                  </div>
+                </div>
+              </div>
+              <!-- End Content Four -->
+            </div>
+            <!-- End Datatable -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Content Section -->
+  </main>
+  <app-footer></app-footer>
+
+  <!-- Add Task Modal Window -->
+  <div id="addTaskModal" class="js-add-project-window u-modal-window" style="width: 680px;">
+    <form class="card mb-9">
+      <!-- Header -->
+      <header class="card-header bg-light py-3 px-5">
+        <div class="row justify-content-between align-items-center no-gutters">
+          <div class="col-3">
+            <h4 class="h6 mb-0">Add a new task</h4>
+          </div>
+
+          <div class="col-9 text-right">
+            <!-- Icons -->
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item mr-0">
+                <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="#" data-toggle="tooltip" data-placement="top" title="Add attach">
+                  <span class="fas fa-paperclip btn-icon__inner"></span>
+                </a>
+              </li>
+              <li class="list-inline-item mr-0">
+                <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="#" data-toggle="tooltip" data-placement="top" title="Copy task URL">
+                  <span class="fas fa-link btn-icon__inner"></span>
+                </a>
+              </li>
+              <li class="list-inline-item mr-0">
+                <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="#" data-toggle="tooltip" data-placement="top" title="Like this">
+                  <span class="fas fa-thumbs-up btn-icon__inner"></span>
+                </a>
+              </li>
+              <li class="list-inline-item mr-0">
+                <!-- Settings Dropdown -->
+                <div class="position-relative">
+                  <a id="addTaskSettingsDropdown1Invoker" class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="javascript:;" role="button"
+                     aria-controls="addTaskSettingsDropdown1"
+                     aria-haspopup="true"
+                     aria-expanded="false"
+                     data-unfold-event="click"
+                     data-unfold-target="#addTaskSettingsDropdown1"
+                     data-unfold-type="css-animation"
+                     data-unfold-duration="300"
+                     data-unfold-delay="300"
+                     data-unfold-hide-on-scroll="true"
+                     data-unfold-animation-in="slideInUp"
+                     data-unfold-animation-out="fadeOut">
+                    <span class="fas fa-ellipsis-h btn-icon__inner"></span>
+                  </a>
+
+                  <div id="addTaskSettingsDropdown1" class="dropdown-menu dropdown-menu-right" aria-labelledby="addTaskSettingsDropdown1Invoker" style="min-width: 160px;">
+                    <a class="dropdown-item" href="#">Tags</a>
+                    <a class="dropdown-item" href="#">Add flag</a>
+                    <a class="dropdown-item" href="#">Add to project</a>
+                    <a class="dropdown-item" href="#">Delete task</a>
+                    <a class="dropdown-item" href="#">Copy task...</a>
+                    <a class="dropdown-item" href="#">Print</a>
+                  </div>
+                </div>
+                <!-- End Settings Dropdown -->
+              </li>
+              <li class="list-inline-item mr-0">
+                <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="javascript:;" onclick="Custombox.modal.close();">
+                  <span class="fas fa-times btn-icon__inner"></span>
+                </a>
+              </li>
+            </ul>
+            <!-- End Icons -->
+          </div>
+        </div>
+      </header>
+      <!-- End Header -->
+
+      <!-- Alert -->
+      <div class="alert alert-warning font-size-1 rounded-0 px-5 mb-0" role="alert">
+        This task visible to members of Front Template. <a class="alert-link" href="#">Make public</a>
+      </div>
+      <!-- End Alert -->
+
+      <div class="card-body pt-3 pb-5 px-5">
+        <!-- Task Title -->
+        <div class="input-group input-group-borderless mb-3">
+          <input class="form-control pl-0" type="text" placeholder="Enter a task title" aria-label="Enter a task title">
+        </div>
+        <!-- End Task Title -->
+
+        <!-- Status -->
+        <div class="row mx-gutters-2 mb-3">
+          <div class="col-sm-4 mb-3 mb-sm-0">
+            <label class="form-label">Status</label>
+            <!-- Select -->
+            <select class="js-select selectpicker dropdown-select" data-width="100%" data-style="btn-soft-primary btn-sm">
+              <option value="markComplete">Mark complete</option>
+              <option value="completed">Completed</option>
+            </select>
+            <!-- End Select -->
+          </div>
+
+          <div class="col-6 col-sm">
+            <label class="form-label">Assignee</label>
+            <!-- Select -->
+            <select class="js-select selectpicker dropdown-select" title="Add assignee"
+                    data-width="100%"
+                    data-style="btn-sm bg-transparent text-secondary font-weight-normal px-0"
+                    data-live-search="true"
+                    data-searchbox-classes="input-group-sm">
+              <option value="assignee1" data-tokens="user1" data-content='
+                <span class="d-flex align-items-center">
+                  <span class="u-xs-avatar mr-2">
+                    <img class="img-fluid rounded-circle" src="../../assets/img/32x32/img9.jpg" alt="Image Description">
+                  </span>
+                  <span>Sebastian Diaz</span>
+                </span>'>
+                Sebastian Diaz
+              </option>
+              <option value="assignee2" data-tokens="user2" data-content='
+                <span class="d-flex align-items-center">
+                  <span class="u-xs-avatar mr-2">
+                    <img class="img-fluid rounded-circle" src="../../assets/img/32x32/img7.jpg" alt="Image Description">
+                  </span>
+                  <span>Eliza Donovan</span>
+                </span>'>
+                Eliza Donovan
+              </option>
+              <option value="assignee3" data-tokens="user3" data-content='
+                <span class="d-flex align-items-center">
+                  <span class="u-xs-avatar mr-2">
+                    <img class="img-fluid rounded-circle" src="../../assets/img/32x32/img6.jpg" alt="Image Description">
+                  </span>
+                  <span>Cameron Brown</span>
+                </span>'>
+                Cameron Brown
+              </option>
+            </select>
+            <!-- End Select -->
+          </div>
+
+          <div class="col-6 col-sm">
+            <label class="form-label">Choose project</label>
+            <!-- Select -->
+            <select class="js-select selectpicker dropdown-select dropdown-select--right" title="Choose project"
+                    data-width="100%"
+                    data-style="btn-sm bg-transparent text-secondary font-weight-normal px-0"
+                    data-live-search="true"
+                    data-searchbox-classes="input-group-sm">
+              <option value="project1" data-content='
+                <span class="d-flex align-items-center">
+                  <span class="u-xs-avatar mr-2">
+                    <img class="img-fluid rounded-circle" src="../../assets/img/32x32/img11.jpg" alt="Image Description">
+                  </span>
+                  <span>Slack</span>
+                </span>'>
+                Slack
+              </option>
+              <option value="project2" data-content='
+                <span class="d-flex align-items-center">
+                  <span class="u-xs-avatar mr-2">
+                    <img class="img-fluid rounded-circle" src="../../assets/img/32x32/img12.jpg" alt="Image Description">
+                  </span>
+                  <span>DropBox</span>
+                </span>'>
+                DropBox
+              </option>
+              <option value="project3" data-content='
+                <span class="d-flex align-items-center">
+                  <span class="u-xs-avatar mr-2">
+                    <img class="img-fluid rounded-circle" src="../../assets/img/32x32/img13.jpg" alt="Image Description">
+                  </span>
+                  <span>Spotify</span>
+                </span>'>
+                Spotify
+              </option>
+            </select>
+            <!-- End Select -->
+          </div>
+        </div>
+        <!-- End Status -->
+
+        <!-- Input -->
+        <textarea class="form-control" rows="3" placeholder="Add a description" aria-label="Add a description"></textarea>
+        <!-- End Input -->
+
+        <hr class="my-4">
+
+        <!-- Assignee -->
+        <div class="row">
+          <div class="col-sm-5 mb-4 mb-sm-0">
+            <label class="form-label">Reporter</label>
+            <div class="media align-items-center">
+              <div class="u-sm-avatar mr-2">
+                <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img1.jpg" alt="Image Description">
+              </div>
+              <div class="media-body">
+                <h5 class="h6 font-weight-normal mb-0">Natalie Curtis</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-7">
+            <label class="form-label">Followers</label>
+            <!-- Avatars -->
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item mb-1 mr-0">
+                <a href="#">
+                  <div class="u-sm-avatar u-sm-avatar--bordered rounded-circle">
+                    <img class="img-fluid rounded-circle" src="../../assets/img/32x32/img2.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="Patrick Garner">
+                  </div>
+                </a>
+              </li>
+              <li class="list-inline-item ml-n3 mb-1 mr-0">
+                <a href="#">
+                  <div class="u-sm-avatar u-sm-avatar--bordered rounded-circle">
+                    <img class="img-fluid rounded-circle" src="../../assets/img/32x32/img3.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="Amanta Owens">
+                  </div>
+                </a>
+              </li>
+              <li class="list-inline-item ml-n3 mb-1 mr-0">
+                <a href="#">
+                  <div class="u-sm-avatar u-sm-avatar--bordered rounded-circle">
+                    <img class="img-fluid rounded-circle" src="../../assets/img/32x32/img4.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="Eliza Donovan">
+                  </div>
+                </a>
+              </li>
+              <li class="list-inline-item ml-n3 mb-1 mr-0">
+                <a href="#">
+                  <div class="u-sm-avatar u-sm-avatar--bordered rounded-circle">
+                    <img class="img-fluid rounded-circle" src="../../assets/img/32x32/img5.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="Cler Lockhart">
+                  </div>
+                </a>
+              </li>
+              <li class="list-inline-item ml-n3 mb-1 mr-0">
+                <a href="#">
+                  <div class="u-sm-avatar u-sm-avatar--bordered rounded-circle">
+                    <img class="img-fluid rounded-circle" src="../../assets/img/32x32/img6.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="James Collins">
+                  </div>
+                </a>
+              </li>
+              <li class="list-inline-item ml-n3 mb-1 mr-0">
+                <a href="#">
+                  <div class="u-sm-avatar u-sm-avatar--bordered rounded-circle">
+                    <img class="img-fluid rounded-circle" src="../../assets/img/32x32/img7.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="Josephina Mack">
+                  </div>
+                </a>
+              </li>
+              <li class="list-inline-item ml-n3 mb-1 mr-0">
+                <a href="#">
+                  <div class="u-sm-avatar u-sm-avatar--bordered rounded-circle">
+                    <img class="img-fluid rounded-circle" src="../../assets/img/32x32/img8.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="Sean Lewis">
+                  </div>
+                </a>
+              </li>
+              <li class="list-inline-item ml-n3 mb-1 mr-0">
+                <a href="#">
+                  <div class="u-sm-avatar u-sm-avatar--bordered rounded-circle">
+                    <img class="img-fluid rounded-circle" src="../../assets/img/32x32/img9.jpg" alt="Image Description" data-toggle="tooltip" data-placement="top" title="Sebastian Diaz">
+                  </div>
+                </a>
+              </li>
+              <li class="list-inline-item ml-n3 mb-1 mr-0">
+                <a class="btn btn-sm btn-icon btn-light rounded-circle" href="#">
+                  <span class="btn-icon__inner">+3</span>
+                </a>
+              </li>
+            </ul>
+            <!-- End Avatars -->
+          </div>
+        </div>
+        <!-- End Assignee -->
+
+        <hr class="my-4">
+
+        <!-- Details -->
+        <div class="row">
+          <div class="col-7 col-sm-5 mb-4 mb-sm-0">
+            <label class="form-label">Due date</label>
+            <!-- Datepicker -->
+            <div id="datepickerWrapper" class="u-datepicker input-group input-group-sm input-group-borderless">
+              <div class="input-group-prepend">
+                <span class="input-group-text text-success p-0 mr-2">
+                  <span class="fas fa-calendar"></span>
+                </span>
+              </div>
+              <input class="js-range-datepicker form-control bg-transparent px-1" type="text" placeholder="Due date" aria-label="Due date"
+                     data-rp-wrapper="#datepickerWrapper"
+                     data-rp-date-format="d/m/Y">
+            </div>
+            <!-- End Datepicker -->
+          </div>
+
+          <div class="col-5 col-sm-3">
+            <label class="form-label">Priority</label>
+            <!-- Select -->
+            <select class="js-select selectpicker dropdown-select w-100" data-style="btn-sm bg-transparent font-weight-normal px-0">
+              <option value="priorityHighest" data-icon="fas fa-arrow-up text-danger small mr-2">Highest</option>
+              <option value="priorityHigh" data-icon="fas fa-arrow-up text-danger small mr-2">High</option>
+              <option value="priorityMedium" data-icon="fas fa-arrow-up text-warning small mr-2" selected>Medium</option>
+              <option value="priorityLow" data-icon="fas fa-arrow-down text-success small mr-2">Low</option>
+              <option value="priorityLowest" data-icon="fas fa-arrow-down text-success small mr-2">Lowest</option>
+            </select>
+            <!-- End Select -->
+          </div>
+        </div>
+        <!-- End Details -->
+
+        <hr class="my-4">
+
+        <!-- Label Input -->
+        <label class="form-label">Labels</label>
+        <div class="u-tagsinput">
+          <input type="text" value="HTML5, CSS3" data-role="tagsinput">
+        </div>
+        <!-- End Label Input -->
+
+        <hr class="my-4">
+
+        <!-- Comments -->
+        <div class="mb-3">
+          <label class="form-label">Comments</label>
+          <div class="media">
+            <div class="u-sm-avatar mr-2">
+              <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img1.jpg" alt="Image Description">
+            </div>
+            <div class="media-body">
+              <textarea class="form-control" rows="2" placeholder="Add a comment" aria-label="Add a comment"></textarea>
+            </div>
+          </div>
+        </div>
+        <!-- End Comments -->
+
+        <!-- Buttons -->
+        <div class="d-flex justify-content-end">
+          <button type="submit" class="btn btn-sm btn-primary transition-3d-hover mr-1">Create Task</button>
+          <button type="submit" class="btn btn-sm btn-soft-secondary transition-3d-hover" onclick="Custombox.modal.close();">Cancel</button>
+        </div>
+        <!-- End Buttons -->
+      </div>
+    </form>
+  </div>
+  <!-- End Add Task Modal Window -->
+  <!-- ========== END SECONDARY CONTENTS ========== -->
+
+  <!-- Go to Top -->
+  <a class="js-go-to u-go-to" href="#"
+    data-position='{"bottom": 15, "right": 15 }'
+    data-type="fixed"
+    data-offset-top="400"
+    data-compensation="#header"
+    data-show-effect="slideInUp"
+    data-hide-effect="slideOutDown">
+    <span class="fas fa-arrow-up u-go-to__inner"></span>
+  </a>
+  <!-- End Go to Top -->
